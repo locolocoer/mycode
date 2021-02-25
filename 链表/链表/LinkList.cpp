@@ -101,3 +101,25 @@ int LocateElem(LinkNode* L, ElemType e)
 	else
 		return i;
 }
+bool ListInsert(LinkNode*& L, int i, ElemType e)
+{
+	int j = 0;
+	LinkNode* p = L, * s;
+	if (i < 1)
+		return false;
+	while (j < i - 1 && p != NULL)
+	{
+		p = p->next;
+		j++;
+	}
+	if (p == NULL)
+		return false;
+	else
+	{
+		s = (LinkNode*)malloc(sizeof(LinkNode));
+		s->data = e;
+		s->next = p->next;
+		p->next = s;
+		return;
+	}
+}
