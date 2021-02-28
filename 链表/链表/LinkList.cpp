@@ -123,3 +123,27 @@ bool ListInsert(LinkNode*& L, int i, ElemType e)
 		return;
 	}
 }
+bool ListDelete(LinkNode*& L, int i, ElemType& e)
+{
+	int j = 0;
+	LinkNode* p = L, * q;
+	if (i <= 0)
+		return false;
+	while (j < i - 1 && p != NULL)
+	{
+		j++;
+		p = p->next;
+	}
+	if (p == NULL)
+		return false;
+	else
+	{
+		q = p->next;
+		if (q == NULL)
+			return false;
+		e = q->data;
+		p->next = q->next;
+		free(q);
+		return true;
+	}
+}
