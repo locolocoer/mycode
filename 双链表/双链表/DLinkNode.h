@@ -8,3 +8,5 @@ typedef struct Dnode
 	Elemtype data;
 }DLinkNode;
 void CreateListF(DLinkNode*& L, Elemtype a[], int n);
+void CreateListR(DLinkNode*& L, Elemtype a[], int n);
+bool ListInsert(DLinkNode*& L, int i, Elemtype e);
