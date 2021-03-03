@@ -85,7 +85,7 @@ bool mgpath(int xi, int yi, int xe, int ye)
 		if (i == xe && j == ye)
 		{
 			k = 0;
-			while (!StackEmpty)
+			while (!StackEmpty(st))
 			{
 				Pop(st, e);
 				path[k++] = e;
@@ -114,7 +114,7 @@ bool mgpath(int xi, int yi, int xe, int ye)
 			case 3:il = i; jl = j - 1; break;
 			}
 			if (mg[il][jl] == 0)
-				find == true;
+				find = true;
 		}
 		if (find)
 		{
@@ -135,7 +135,15 @@ bool mgpath(int xi, int yi, int xe, int ye)
 	return false;
 }
 int main() {
-	if (!mgpath(1, 1, M, N))
+	SqStack* s;
+	InitStack(s);
+	Box w;
+	w.i = 1; w.j = 1; w.di = 1;
+	Push(s, w);
+	//Pop(s, w);
+	printf("%d", !StackEmpty(s));
+
+	if (!mgpath(1, 1, 2,1))
 		printf("ц╩сп╫Б");
 	return 1;
 }

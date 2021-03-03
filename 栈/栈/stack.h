@@ -1,5 +1,5 @@
 #pragma once
-#define MAXSIZE 1000
+#define MAXSIZE 20
 #include <malloc.h>
 #include <stdio.h>
 typedef int ElemType;
