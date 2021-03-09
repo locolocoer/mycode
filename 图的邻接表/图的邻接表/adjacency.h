@@ -1,4 +1,6 @@
 #pragma once
+#include <malloc.h>
+#define INF 32467
 #define MAXV 100
 typedef struct ANode
 {
