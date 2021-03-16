@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2021-03-14T21:55:50
+# Project created by QtCreator 2021-03-14T22:00:30
 #
 #-------------------------------------------------
 
@@ -24,9 +24,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    tictactoewidget.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    tictactoewidget.h
 
 FORMS    += mainwindow.ui
-

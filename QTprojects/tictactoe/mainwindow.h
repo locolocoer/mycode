@@ -1,8 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include <QLabel>
 #include <QMainWindow>
-
+#include "tictactoewidget.h"
 namespace Ui {
 class MainWindow;
 }
@@ -17,6 +17,11 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    void setLabelBold(QLabel *label,bool isBold);
+private slots:
+    void startNewGame();
+    void updateNameLables();
+    void handleGameOver(TicTacToeWidget::Player winner);
 };
 
 #endif // MAINWINDOW_H
