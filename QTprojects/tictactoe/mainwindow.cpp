@@ -4,10 +4,12 @@
 #include <QString>
 #include<QPushButton>
 #include<QMessageBox>
+#include "configurationdialog.h"
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    setFixedSize(200,300);
     ui->setupUi(this);
     connect(ui->gameBoard,&TicTacToeWidget::currentPlayerChanged,this,&MainWindow::updateNameLables);
     connect(ui->startNewGame,&QPushButton::clicked,this,&MainWindow::startNewGame);
@@ -28,8 +30,12 @@ void MainWindow::setLabelBold(QLabel *label, bool isBold)
 
 void MainWindow::startNewGame()
 {
-    ui->player1Name->setText("Alice");
-    ui->player2Name->setText("Bob");
+  ConfigurationDialog dialog(this);
+  if (dialog.exec()==QDialog::Rejected){
+  return;
+  }
+  ui->player1Name->setText(dialog.player1Name());
+  ui->player2Name->setText(dialog.player2Name());
     ui->gameBoard->initNewGame();
     qDebug()<<"button clicked";
 }
